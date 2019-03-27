@@ -68,5 +68,23 @@ describe "array equals" do
 
       array_equals(array1, array2).must_equal false
     end
+    
+        it "first array is empty and second array is nil: not equal" do
+      array1 = []
+      array2 = nil
+      array_equals(array1, array2).must_equal false
+    end
+
+    it "first array is nil and second array is empty: not equal" do
+      array1 = nil
+      array2 = []
+      array_equals(array1, array2).must_equal false
+    end
+
+    it "first array and second array are equal until last index: not equal" do
+      array1 = [10, 20, 30, 40, 50, 60]
+      array2 = [10, 20, 30, 40, 50, 547]
+      array_equals(array1, array2).must_equal false
+    end
   end
 end
