@@ -68,5 +68,12 @@ describe "array equals" do
 
       array_equals(array1, array2).must_equal false
     end
+    
+    it "will return false if the 1st elements are equal, but the 2nd aren't" do
+      array1 = [20, 30]
+      array2 = [20, 40]
+      
+      array_equals(array1, array2).must_equal false
+    end
   end
 end
